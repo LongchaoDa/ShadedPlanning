@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Redirecting to homepage</title>
+</head>
+
+<body>
+	<a id="aid" href="https://dalongchao.wixsite.com/mysite-1" οnclick="alert('clicked');">He is on the way...</a>
+	<script>
+		// trigger right after loaded in to the resource
+		(()=>{
+			// compatible with IE
+		    if(document.all) {
+		        document.getElementById("aid").click();
+		    }
+		    // compatible with other broswers
+		    else {
+		        var e = document.createEvent("MouseEvents");
+		        e.initEvent("click", true, true);
+		        document.getElementById("aid").dispatchEvent(e);
+		    }
+		})();
+
+	/*	// trigger based on time
+		setTimeout(()=>{
+		    if(document.all) {
+		        document.getElementById("aid").click();
+		    }
+		    else {
+		        var e = document.createEvent("MouseEvents");
+		        e.initEvent("click", true, true);
+		        document.getElementById("aid").dispatchEvent(e);
+		    }
+		},3000); // 3seconds	*/
+	</script>
+</body>
+
+</html>
